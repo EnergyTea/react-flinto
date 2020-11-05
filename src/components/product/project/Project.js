@@ -1,6 +1,8 @@
 import React from 'react';
 
-import PROJECTS from '../../Store/ProjectReducer';
+import TodoList from '../tasks/TodoList';
+import CompletedList from '../tasks/CompletedList';
+import PROJECTS from '../../store/ProjectReducer';
 
 class Project extends React.Component {
     render() {
@@ -19,7 +21,8 @@ class Project extends React.Component {
             return (
             <div>                
                 <h1>{project.name}</h1>
-                <h5>{project.id}</h5>
+                <TodoList />
+                <CompletedList />
             </div>
             );
         }

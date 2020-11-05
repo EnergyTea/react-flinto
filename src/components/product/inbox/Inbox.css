@@ -1,0 +1,49 @@
+.Inbox-Name {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 24px;
+  margin-bottom: 17px;
+}
+
+.Inbox-Todo {
+  display: flex;
+}
+
+.Inbox-Todo-Label {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #8c8c8c;
+}
+
+.Incox-Todo-Delete-Button {
+  width: 136px;
+  height: 25px;
+  background: #ffffff;
+  box-sizing: border-box;
+  color: #ff4040;
+  border-color: #ff4040;
+  margin: 0 10px 0 auto;
+}
+
+.Inbox-Completed {
+  display: flex;
+}
+
+.Inbox-Completed-Label {
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #8c8c8c;
+}
+
+.Incox-Completed-Delete-Button {
+  width: 136px;
+  height: 25px;
+  background: #ffffff;
+  box-sizing: border-box;
+  color: #ff4040;
+  border-color: #ff4040;
+  margin: 0 10px 0 auto;
+}

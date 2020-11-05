@@ -1,43 +1,24 @@
  const TASKS = [
     {
         id: 1,
-        name: 'Magneta',
+        name: '4517 Washington Ave. Manchester, Kentucky 39495',
         isComplited: false,
       },
       {
         id: 2,
-        name: 'Bombosta',
+        name: '2715 Ash Dr. San Jose, South Dakota 83475',
         isComplited: false,
       },
       {
         id: 3,
-        name: 'Celerios',
+        name: '2118 Thornridge Cir. Syracuse, Connecticut 35624',
         isComplited: false,
       },
       {
         id: 4,
-        name: 'Rania',
+        name: '6391 Elgin St. Celina, Delaware 10299',
         isComplited: false,
-      },
-];
-
-export const PROJECTS = [
-  {
-    id: 1,
-    name: 'Magneta',
-  },
-  {
-    id: 2,
-    name: 'Bombosta',
-  },
-  {
-    id: 3,
-    name: 'Celerios',
-  },
-  {
-    id: 4,
-    name: 'Rania',
-  },
+      }
 ]
 
 export default TASKS;

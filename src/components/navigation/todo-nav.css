@@ -1,0 +1,43 @@
+.Todo-Nav {
+  box-sizing: border-box;
+  padding: 16px;
+  width: 265px;
+  height: 91vh;
+  border-right: 1px solid #e5e5e5;
+  background-color: #fafafa;
+}
+
+.Todo-Nav-Label {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.Todo-Nav-Up {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+.Todo-Nav-Elem {
+  font-weight: bold;
+  text-decoration: none;
+  color: #1a1a1a;
+  size: 14px;
+  font-size: 14px;
+  padding: 5px 0 5px 13px;
+}
+
+.Todo-Nav-Elem-active {
+  background-color: #f2f2f2;
+}
+
+.Todo-Nav-Add-Proj {
+  background-color: #fafafa;
+  border-color: #1400fd;
+  color: #1400fd;
+  height: 30px;
+  width: 232px;
+  margin-top: 20px;
+}

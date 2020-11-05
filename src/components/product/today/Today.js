@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Task from './tasks/Task';
-import TASKS from '../Store/TasksReducer';
+import Task from '../tasks/Task';
+import TASKS from '../../store/TasksReducer';
 
 class Today extends React.Component {
     render() {

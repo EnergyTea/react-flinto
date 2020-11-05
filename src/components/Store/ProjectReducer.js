@@ -1,19 +1,19 @@
 export const PROJECTS = [
     {
       id: 1,
-      name: 'Magneta',
+      name: 'MyFirstProject',
     },
     {
       id: 2,
-      name: 'Bombosta',
+      name: 'MySecondProject',
     },
     {
       id: 3,
-      name: 'Celerios',
+      name: 'MyNextProject',
     },
     {
       id: 4,
-      name: 'Rania',
+      name: 'MyLastProject',
     },
   ]
   

@@ -1,0 +1,30 @@
+.Task {
+  box-sizing: border-box;
+  height: 70px;
+  display: flex;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.Inbox-Todo-Tasks .Task:last-child {
+  border: none;
+}
+
+.Task-Checkbox {
+  border: 0.5px solid #d9d9d9;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin: auto 16px auto 0;
+}
+
+.Task-Name {
+  border: none;
+  color: #404040;
+  width: 100%;
+  height: 24px;
+  margin: auto 0;
+}
+
+.Task-Setting {
+  margin: 0 0 0 auto;
+}
