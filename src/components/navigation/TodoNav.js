@@ -1,7 +1,7 @@
 import { NavLink }  from 'react-router-dom';
 
 import './todo-nav.css';
-import { PROJECTS } from '../store/ProjectReducer';
+import PROJECTS from '../store/PROJECTS';
 
 
 function TodoNav() {

@@ -1,4 +1,4 @@
-export const PROJECTS = [
+let PROJECTS = [
     {
       id: 1,
       name: 'MyFirstProject',
@@ -16,5 +16,5 @@ export const PROJECTS = [
       name: 'MyLastProject',
     },
   ]
-  
+
   export default PROJECTS;

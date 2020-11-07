@@ -1,4 +1,4 @@
- const TASKS = [
+let  TASKS = [
     {
         id: 1,
         name: '4517 Washington Ave. Manchester, Kentucky 39495',
@@ -12,7 +12,7 @@
       {
         id: 3,
         name: '2118 Thornridge Cir. Syracuse, Connecticut 35624',
-        isComplited: false,
+        isComplited: true,
       },
       {
         id: 4,

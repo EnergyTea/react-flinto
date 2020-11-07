@@ -1,22 +1,43 @@
 import React from 'react';
+import AddTask from './AddTask';
 
-import TASKS from '../../store/TasksReducer';
 import Task from './Task';
 
-export default function TodoList() {
-    return (
-        <div>
-            <div className="Inbox-Todo">
-                <label className="Inbox-Todo-Label">ToDo</label>
-                <button className="Incox-Todo-Delete-Button">Clear not completed</button>
+export default class TodoList extends React.Component {
+    todos = [];
+    selectTodo() {
+        this.todos = [];
+        this.props.tasks.map((task) => {
+                if (!task.isComplited) 
+                    this.todos.push(task);
+            }
+            
+        )
+    }
+
+    render() {
+        this.selectTodo();
+        return (
+            <div>
+                <div className="Inbox-Todo">
+                    <label className="Inbox-Todo-Label">ToDo</label>
+                    <button className="Incox-Todo-Delete-Button">Clear not completed</button>
+                </div>
+                <div className="Inbox-Todo-Tasks">
+                    
+                    <AddTask addTaskProps={this.props.addTaskProps} />  
+                    {this.todos.map(task => (
+                        <Task 
+                            key={task.id} 
+                            task={task} 
+                            updateTodoProps={this.props.updateTodoProps}
+                            handleChangeProps={this.props.handleChangeProps}
+                            deleteTodoProps={this.props.delTodoProps} 
+                        /> 
+                    )
+                    )}
+                </div>  
             </div>
-            <div className="Inbox-Todo-Tasks">
-                {
-                    TASKS.map(function(task) {
-                        return <Task task={task} />                        
-                    })
-                }
-            </div>  
-        </div>
-    )
+        )
+    }    
 }

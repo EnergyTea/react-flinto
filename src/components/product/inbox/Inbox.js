@@ -10,8 +10,16 @@ class Inbox extends React.Component {
         return (
             <div className="Inbox">
                 <p className="Inbox-Name">Inbox</p>    
-                <TodoList />              
-                <CompletedList />
+                <TodoList 
+                    tasks={this.props.state.todos} 
+                    handleChangeProps={this.props.handleChangeProps}
+                    delTodoProps={this.props.delTodoProps}  
+                />
+                <CompletedList 
+                    tasks={this.props.state.todos} 
+                    handleChangeProps={this.props.handleChangeProps} 
+                    delTodoProps={this.props.delTodoProps}
+                />
             </div>
         )
     }

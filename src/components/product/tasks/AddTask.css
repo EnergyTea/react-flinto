@@ -1,0 +1,15 @@
+
+.Add-Task {
+  box-sizing: border-box;
+  height: 70px;
+  display: flex;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.Add-Task-Input {
+  border: none;
+  color: #404040;
+  width: 100%;
+  height: 24px;
+  margin: auto 0;
+}

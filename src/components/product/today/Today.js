@@ -1,18 +1,27 @@
 import React from 'react';
 
-import Task from '../tasks/Task';
-import TASKS from '../../store/TasksReducer';
+import './Today.css';
+import TodoList from '../tasks/TodoList';
+import CompletedList from '../tasks/CompletedList';
 
 class Today extends React.Component {
     render() {
         return (
             <div>
-                <label className="Today-label">Today</label>
-                {
-                    TASKS.map(function(task) {
-                        return <Task key={task.id} task={task} />                        
-                    })
-                }
+                <p className="Today-label">Today</p>              
+                <TodoList 
+                    addTaskProps={this.props.addTodoProps}
+                    updateTodoProps={this.props.updateTodoProps}
+                    tasks={this.props.state.todos} 
+                    handleChangeProps={this.props.handleChangeProps}
+                    delTodoProps={this.props.delTodoProps}  
+                />
+                <CompletedList 
+                    updateTodoName={this.props.updateTodoName}
+                    tasks={this.props.state.todos} 
+                    handleChangeProps={this.props.handleChangeProps} 
+                    delTodoProps={this.props.delTodoProps}
+                />
             </div>
         )
     }
