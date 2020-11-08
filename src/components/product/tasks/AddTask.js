@@ -3,41 +3,44 @@ import React from 'react';
 import './AddTask.css';
 import more from '../../../icon/more-vertical.svg';
 
-class AddTask extends React.Component {
+class AddTask extends React.Component {  
+    
     state = {
-        name: ""
+        name: "",
+        projId: this.props.projId
       };
       onChange = e => {
         this.setState({
-          [e.target.name]: e.target.value
+          [e.target.name]: e.target.value,
+          [e.target.projId]: this.projId
         });
       };
     
       handleSubmit = e => {
         e.preventDefault();
-        this.props.addTaskProps(this.state.name);
+        this.props.addTaskProps(this.state.name, this.state.projId);
         this.setState({
             name: ""
         });
       };
-    render() {
-        return (
-            <form onSubmit={this.handleSubmit} className="Add-Task" >
-                <input 
-                    className="Task-Checkbox" 
-                    type="checkbox"
-                />
-                <label for="checkbox"></label>
-                <input 
-                    className="Add-Task-Input"
-                    placeholder="Add todo..."
-                    value={this.state.name}
-                    name="name"
-                    onChange={this.onChange}
-                />
-                <img className="Task-Setting" src={more} alt="setting"/>        
-            </form> 
-        )
+    render() {      
+      return (
+          <form onSubmit={this.handleSubmit} className="Add-Task" >
+              <input 
+                  className="Task-Checkbox" 
+                  type="checkbox"
+              />
+              <label for="checkbox"></label>
+              <input 
+                  className="Add-Task-Input"
+                  placeholder="Add todo..."
+                  value={this.state.name}
+                  name="name"
+                  onChange={this.onChange}
+              />
+              <img className="Task-Setting" src={more} alt="setting"/>        
+          </form> 
+      )
     };
 }
 

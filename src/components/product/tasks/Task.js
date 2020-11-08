@@ -8,7 +8,6 @@ class Task extends React.Component {
         super(props);
         this.state = {value: props.task.name}       
     }
-
     render() {
         return (
             <div className="Task">

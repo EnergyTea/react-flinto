@@ -1,10 +1,9 @@
 import { NavLink }  from 'react-router-dom';
 
 import './todo-nav.css';
-import PROJECTS from '../store/PROJECTS';
 
 
-function TodoNav() {
+function TodoNav(props) {
     return (
         <div className="Todo-Nav">
             <label className="Todo-Nav-Label">All</label>
@@ -15,7 +14,7 @@ function TodoNav() {
             <label className="Todo-Nav-Label">Projects</label>
             <nav className="Todo-Nav-Up">
             {
-                PROJECTS.map(function(proj) {
+                props.projectsName.map(function(proj) {
                     return  <NavLink exact to={'/project/'+proj.id} className="Todo-Nav-Elem" activeClassName="Todo-Nav-Elem-active">{proj.name}</NavLink>          
                 })
             }

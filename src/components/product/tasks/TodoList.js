@@ -25,7 +25,9 @@ export default class TodoList extends React.Component {
                 </div>
                 <div className="Inbox-Todo-Tasks">
                     
-                    <AddTask addTaskProps={this.props.addTaskProps} />  
+                    <AddTask 
+                        addTaskProps={this.props.addTaskProps}  
+                        projId={this.props.addInProj}/>  
                     {this.todos.map(task => (
                         <Task 
                             key={task.id} 

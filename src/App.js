@@ -17,22 +17,64 @@ class App extends React.Component {
       {
       // id: uuid.v4(),
       id: 1,
+      projId: 2,
       name: "Setup development environment",
       isComplited: true,
       },
       {
       // id: uuid.v4(),
-      id: 2,
+      id: 2,      
+      projId: 2,
       name: "Develop website and add content",
       isComplited: false,
       },
       {
       // id: uuid.v4(),
-      id: 3,
+      id: 3,      
+      projId: 1,
       name: "Deploy to live server",
       isComplited: false,
       },
+      {
+        // id: uuid.v4(),
+        id: 4,
+        projId: 3,
+        name: "Setup development environment",
+        isComplited: true,
+        },
+        {
+        // id: uuid.v4(),
+        id: 5,      
+        projId: 3,
+        name: "Develop website and add content",
+        isComplited: false,
+        },
+        {
+        // id: uuid.v4(),
+        id: 6,      
+        projId: 3,
+        name: "Deploy to live server",
+        isComplited: false,
+        },
+      
   ],
+  projects: [
+    {
+      // id: uuid.v4(),
+      id: 1,
+      name: "MyFirstProject",
+      },
+      {
+      // id: uuid.v4(),
+      id: 2,
+      name: "MySecondProject",
+      },
+      {
+      // id: uuid.v4(),
+      id: 3,
+      name: "MyLastProject",
+      },
+  ]
 };
 
 handleChange = (id) => {
@@ -57,11 +99,12 @@ delTodo = (id) => {
   });
 };
 
-addTodoItem = (title) => {
+addTodoItem = (title, projId) => {
   const newTodo = {
     // id: uuid.v4(),
     id: this.state.todos.length+1,
     name: title,
+    projId: projId,
     completed: false,
   };
   this.setState({
@@ -85,10 +128,11 @@ render() {
         </NavLink>   
       </header>
       <div className="App-body">
-        <TodoNav />
+        <TodoNav projectsName={this.state.projects} />
         <div className="App-body-view">
           <Route exact path="/" render={(props) => <Inbox 
-                state={this.state} 
+                state={this.state}                 
+                addTodoProps={this.addTodoItem}
                 handleChangeProps={this.handleChange}
                 delTodoProps={this.delTodo} 
               />} />
@@ -105,6 +149,8 @@ render() {
                 delTodoProps={this.delTodo} 
               />} />
           <Route path="/project/:id" render={(props) => <Project 
+                {...props}                
+                addTodoProps={this.addTodoItem}
                 state={this.state} 
                 handleChangeProps={this.handleChange} 
                 delTodoProps={this.delTodo} 
