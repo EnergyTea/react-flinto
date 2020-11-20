@@ -3,8 +3,7 @@ import React from 'react';
 import './AddTask.css';
 import more from '../../../icon/more-vertical.svg';
 
-class AddTask extends React.Component {  
-    
+class AddTask extends React.Component {      
     state = {
         name: "",
         projId: this.props.projId
@@ -23,7 +22,8 @@ class AddTask extends React.Component {
             name: ""
         });
       };
-    render() {      
+    render() {
+      this.state.projId = this.props.projId;
       return (
           <form onSubmit={this.handleSubmit} className="Add-Task" >
               <input 
@@ -33,7 +33,7 @@ class AddTask extends React.Component {
               <label for="checkbox"></label>
               <input 
                   className="Add-Task-Input"
-                  placeholder="Add todo..."
+                  placeholder="Enter something"
                   value={this.state.name}
                   name="name"
                   onChange={this.onChange}

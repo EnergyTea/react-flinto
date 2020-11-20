@@ -1,0 +1,13 @@
+.Add-Project-Input {
+  border: none;
+  width: auto;
+  color: #1a1a1a;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 26px;
+}
+::placeholder {
+  color: #e5e5e5;
+}

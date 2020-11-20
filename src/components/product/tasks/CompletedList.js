@@ -1,10 +1,32 @@
 import React from 'react';
 
-import TASKS from '../../store/TASKS';
+
+import AlertModal from '../../alert/AlertModal';
 import Task from './Task';
 
 export default class CompletedList extends React.Component {   
+    state = {        
+        showModal: false,
+        name: "Are you sure you want to clear finished tasks?",        
+        label: "Clear finished?"
+    }
     todos = [];
+
+    ButtonSwitch = () => {
+        this.setState({ showModal: !this.state.showModal })
+    }
+
+    confirm(check) {
+        if (check) {
+            return <AlertModal     
+                        label={this.state.label}                    
+                        name={this.state.name} 
+                        toConfirm={this.delAllTask}
+                        Exit={this.ButtonSwitch} 
+                    />;
+        }            
+    }
+
     selectTodo() {
         this.todos = [];
         this.props.tasks.map((task) => {
@@ -15,18 +37,40 @@ export default class CompletedList extends React.Component {
         )
     }
 
-    render() {
-        this.selectTodo();
+    Info() {
         return (
-            <div>
                 <div className="Inbox-Completed">
                     <label className="Inbox-Completed-Label">Completed</label>                
-                    <button className="Incox-Completed-Delete-Button">Clear completed</button>
+                    <button onClick={() => this.ButtonSwitch()} className="Incox-Completed-Delete-Button">Clear completed</button>
                 </div>
+        )
+    }
+
+    delAllTask = () => {
+        this.props.DeleteTasksProps(this.todos);
+    }
+
+    render() {
+        this.selectTodo();
+        if (this.todos.length == 0) {            
+            
+            return (
+                <div>
+                    {this.Info()}
+                    <p style={{color: "#404040"}}>No tasks</p>
+                </div>            
+            )
+        }
+        return (
+            <div>              
+                {this.Info()}                
+                {this.confirm(this.state.showModal)}
                 {this.todos.map(task => (
                     <Task 
                         key={task.id} 
-                        task={task} 
+                        task={task}                       
+                        updateTodoProps={this.props.updateTodoProps}               
+                        isDelete={this.state.isDelete} 
                         handleChangeProps={this.props.handleChangeProps} 
                         deleteTodoProps={this.props.delTodoProps}
                     /> 

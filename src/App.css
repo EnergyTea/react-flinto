@@ -34,3 +34,11 @@
   height: 91vh;
   padding: 40px;
 }
+
+.App-button-statistics {
+  background-color: #f7f7f7;
+  border: none;
+  color: #8c8c8c;
+  size: 14px;
+  margin-right: 38px;
+}

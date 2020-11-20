@@ -9,15 +9,18 @@ class Today extends React.Component {
         return (
             <div>
                 <p className="Today-label">Today</p>              
-                <TodoList 
+                <TodoList                             
+                    add={this.props.state.add} 
+                    DeleteTasksProps={this.props.DeleteTasksProps}  
                     addTaskProps={this.props.addTodoProps}
                     updateTodoProps={this.props.updateTodoProps}
                     tasks={this.props.state.todos} 
                     handleChangeProps={this.props.handleChangeProps}
                     delTodoProps={this.props.delTodoProps}  
                 />
-                <CompletedList 
-                    updateTodoName={this.props.updateTodoName}
+                <CompletedList  
+                    DeleteTasksProps={this.props.DeleteTasksProps}                
+                    updateTodoProps={this.props.updateTodoProps}  
                     tasks={this.props.state.todos} 
                     handleChangeProps={this.props.handleChangeProps} 
                     delTodoProps={this.props.delTodoProps}

@@ -28,3 +28,19 @@
 .Task-Setting {
   margin: 0 0 0 auto;
 }
+
+.Task-Settings {
+  position: absolute;
+  right: 80px;
+  background: #ffffff;
+  border: 1px solid;
+}
+
+.Task-Settings-Delete {
+  margin: 0;
+  border-bottom: 1px solid;
+}
+
+.Task-Settings-Add {
+  margin: 0;
+}
